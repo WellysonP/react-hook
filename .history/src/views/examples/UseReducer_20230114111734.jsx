@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import { initialState, reducer } from '../../store'
-import { addN, div25, int, multi7, numberAdd2 } from '../../store/actions/number'
+import { multi7, numberAdd2 } from '../../store/actions/number'
 
 
 const UseReducer = (props) => {
@@ -15,15 +15,15 @@ const UseReducer = (props) => {
                 <span className="text">{state.number}</span>
                 <div>
                     <button className="btn"
-                        onClick={() => numberAdd2(dispatch)}>+2</button>
+                        onClick={() => numberAdd2}>+2</button>
                     <button className="btn"
-                        onClick={() => multi7(dispatch)}>*7</button>
+                        onClick={() => multi7}>*7</button>
                     <button className="btn"
-                        onClick={() => div25(dispatch)}>/25</button>
+                        onClick={() => dispatch({ type: 'div25' })}>/25</button>
                     <button className="btn"
-                        onClick={() => int(dispatch)}>int</button>
+                        onClick={() => dispatch({ type: 'int' })}>int</button>
                     <button className="btn"
-                        onClick={() => addN(dispatch)}>add-9</button>
+                        onClick={() => dispatch({ type: 'addN', payload: -9 })}>add-9</button>
                 </div>
             </div>
         </div>

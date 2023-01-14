@@ -1,11 +1,12 @@
 import React, { useReducer } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import { initialState, reducer } from '../../store'
-import { addN, div25, int, multi7, numberAdd2 } from '../../store/actions/number'
+import { addN, div25, int, multi7} from '../../store/actions/number'
+import { numberAdd2 } from '../../store/actions'
 
 
 const UseReducer = (props) => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state] = useReducer(reducer, initialState)
     return (
         <div className="UseReducer">
             <PageTitle
@@ -17,13 +18,13 @@ const UseReducer = (props) => {
                     <button className="btn"
                         onClick={() => numberAdd2(dispatch)}>+2</button>
                     <button className="btn"
-                        onClick={() => multi7(dispatch)}>*7</button>
+                        onClick={() => multi7}>*7</button>
                     <button className="btn"
-                        onClick={() => div25(dispatch)}>/25</button>
+                        onClick={() => div25}>/25</button>
                     <button className="btn"
-                        onClick={() => int(dispatch)}>int</button>
+                        onClick={() => int}>int</button>
                     <button className="btn"
-                        onClick={() => addN(dispatch)}>add-9</button>
+                        onClick={() => addN}>add-9</button>
                 </div>
             </div>
         </div>
